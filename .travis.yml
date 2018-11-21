@@ -20,7 +20,7 @@ before_install:
 - if [ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ]; then TAGS="${TAGS} latest"; fi
 
 - pip install --user awscli | cat
-- eval `$HOME/.local/bin/aws ecr get-login --region eu-west-1`
+- eval `$HOME/.local/bin/aws ecr get-login --region eu-west-1 --no-include-email`
 install:
 - make depend
 script:
